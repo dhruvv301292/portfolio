@@ -34,7 +34,7 @@ export default function NavBar() {
         <Router>
             <Navbar expand="lg" className={scrolled ? "scrolled": ""}>
             <Container>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand as={Link} to="/">
                     <img src={logo} className='logoName' alt='nameLogo'/>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav">
