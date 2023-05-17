@@ -6,8 +6,9 @@ import navIcon2 from '../assets/img/nav-icon2.svg';
 import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
 import Banner from './Banner';
 import Experience from './Experience';
-import Projects from './Projects';
+import Tech from './Tech';
 import Connect from './Connect';
+import Projects from './Projects';
 
 export default function NavBar() {
     const [activeLink, setActiveLink] = useState('home');
@@ -52,7 +53,7 @@ export default function NavBar() {
                     <a href="https://github.com/dhruvv301292"><img src={navIcon2} alt="GitHub" /></a>
                 </div>
                 <Link to='/connect'>
-                    <button className="vvd"><span>Let’s Connect</span></button>
+                    <button className="vvd" onClick={() => onUpdateActiveLink('')}><span>Let’s Connect</span></button>
                 </Link>
                 </span>
                 </Navbar.Collapse>
@@ -61,6 +62,7 @@ export default function NavBar() {
             <Routes>
                 <Route exact path='/' element={<Banner />} />
                 <Route exact path='/experience' element={<Experience />} />
+                <Route exact path='/tech' element={<Tech />} />
                 <Route exact path='/projects' element={<Projects />} />
                 <Route exact path='/connect' element={<Connect />} />
                 <Route render={function () {

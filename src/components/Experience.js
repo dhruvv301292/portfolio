@@ -12,13 +12,15 @@ import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
 const ExperienceCard = ({ experience }) => {
+    const bgColor = experience.type === "Job" ? "#232631" : "#510400"
+    const arrowStyle = experience.type === "Job" ? "7px solid  #232631" : "7px solid  #510400"
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#232631",
+        background: bgColor,
         color: "#fff",
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{ borderRight: arrowStyle }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={
@@ -39,12 +41,10 @@ const ExperienceCard = ({ experience }) => {
           {experience.company_name}
         </p>
       </div>
-
       <ul className='mt-5 list-disc ml-5 space-y-2'>
         {experience.points.map((point, index) => (
           <li
-            key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
+            key={`experience-point-${index}`}            
           >
             {point}
           </li>
@@ -59,7 +59,7 @@ const Experience = () => {
     <div className="experience">
       <motion.div variants={textVariant()}>
         <h1 className={`text-center`}>
-          Experience
+          Experience & Education
         </h1>
       </motion.div>
 
