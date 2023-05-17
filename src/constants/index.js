@@ -13,9 +13,14 @@ import redux from "../assets/img/redux.png";
 import typescript from "../assets/img/typescript.png";
 import PostgreSQL from "../assets/img/postgreSQL.png";
 import rxJS from "../assets/img/rxJS.png";
-import TensorFlow from "../assets/img/TensorFlow.png"
-import Cassandra from "../assets/img/Cassandra.png"
-
+import TensorFlow from "../assets/img/TensorFlow.png";
+import Cassandra from "../assets/img/Cassandra.png";
+import MyTorch from "../assets/img/MyTorch.jpg";
+import trajPred from "../assets/img/trajPred.png";
+import weconnect4 from "../assets/img/weconnect4.png";
+import faultTol from "../assets/img/faultTol.png";
+import placementSolver from '../assets/img/placementSolver.png'
+import restGraph from '../assets/img/restGraph.png'
 
 const experiences = [
   {
@@ -119,67 +124,204 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "MyTorch - An Object-Oriented Deep Learning Library",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "An object-oriented auto-differentiator API emulating PyTorch’s Autograd that computes complex function derivatives by encoding them as directed graphs. Used this API to implement configurable MLPs, CNNs, LSTMs and GRUs",
     tags: [
       {
-        name: "react",
+        name: "pytorch",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "numpy",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "cortex",
         color: "pink-text-gradient",
-      },
+      }
     ],
-    image: c3aiIcon,
-    source_code_link: "https://github.com/",
+    image: MyTorch,
+    source_code_link: "https://github.com/dhruvv301292/DAG-based-automatic-differentiator-for-deep-learning",
+    fit: 'cover'
   },
   {
-    name: "Job IT",
+    name: "Segmentation-assisted Trajectory Prediction",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "A trajectory prediction architecture that ingests information pertaining to the past trajectory, social interactions and environmental interactions of a person and predicts their coordinates for the next 12 times steps.",
     tags: [
       {
-        name: "react",
+        name: "pytorch",
         color: "blue-text-gradient",
+      },
+      {
+        name: "python",
+        color: "green-text-gradient",
+      },
+      {
+        name: "deepLearning",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "aws",
+        color: "black-text-gradient",
+      }
+    ],
+    image: trajPred,
+    source_code_link: "https://github.com/dhruvv301292/Trajectory-Forecasting-using-Segmentation-and-Attention",
+    youtube_link: "https://www.youtube.com/watch?v=bt2_xwNjiYI",
+    fit: 'none'
+  },
+  {
+    name: "Fault tolerant E-book distributed library",
+    description:
+      "A Flask based fault-tolerant distributed asynchronous system, with heartbeats, distributed consensus, total ordering, checkpointing, and logging to provide strong consistency for a replicated (hot-swap and primary-backup) application.",
+    tags: [
+      {
+        name: "flask",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "python",
+        color: "green-text-gradient",
+      },
+      {
+        name: "restAPI",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "http",
+        color: "black-text-gradient",
+      },
+      {
+        name: "sql",
+        color: "orange-text-gradient"
+      }
+    ],
+    image: faultTol,
+    source_code_link: "https://github.com/dhruvv301292/Distributed-Library",
+    fit: 'contain'
+  },
+  {
+    name: "End-to-end Speech Recognition Model",
+    description:
+      "An Attention-based Speech-to-Text Deep Encoder-Decoder Neural Network using pyramidal Bi-LSTMs that was able to produce text with a mean Levenshtein Distance of 18.",
+    tags: [
+      {
+        name: "pytorch",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "python",
+        color: "green-text-gradient",
+      },
+      {
+        name: "pyserve",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "aws",
+        color: "black-text-gradient",
+      },
+    ],
+    image: MyTorch,
+    source_code_link: "https://github.com/dhruvv301292/SpeechRecModel",
+    fit: 'cover'
+  },
+  {
+    name: "Deep Reinforcement Learning based Placement solver",
+    description:
+      "A Deep Reinforcement Learning based approach for solving the NP-hard PCB placement problem for Cadence and DARPA’s Intelligent Design of Electronic Assets initiative.",
+    tags: [
+      {
+        name: "pytorch",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "python",
+        color: "green-text-gradient",
+      },
+      {
+        name: "openai",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "aws",
+        color: "black-text-gradient",
+      },
+    ],
+    image: placementSolver,
+    source_code_link: "https://github.com/dhruvv301292/Reinforcement-Learning-Placement-Solver",
+    publication_link: "https://ml4eng.github.io/camera_readys/36.pdf",
+    fit: 'contain'
+  },
+  {
+    name: "WeConnect4",
+    description:
+      "A multi-client connect-4 game developed using web sockets and the MVC architecture on the django framework",
+    tags: [
+      {
+        name: "django",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "websockets",
+        color: "green-text-gradient",
+      },
+      {
+        name: "javascript",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "bootstrap",
+        color: "black-text-gradient",
+      },
+      {
+        name: "mysql",
+        color: "orange-text-gradient",
+      }
+    ],
+    image: weconnect4,
+    source_code_link: "https://github.com/dhruvv301292/connect4Django",
+    fit: 'cover'
+  },
+  {
+    name: "RestApi vs GraphQL",
+    description:
+      "A simple MERN stack based application displaying the pros and cons of using graphql and restAPIs",
+    tags: [
+      {
+        name: "express",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "react",
+        color: "green-text-gradient",
+      },
+      {
+        name: "javascript",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "black-text-gradient",
+      },
+      {
+        name: "nodejs",
+        color: "orange-text-gradient",
       },
       {
         name: "restapi",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: c3aiIcon,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
-        name: "nextjs",
+        name: "graphql",
         color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
+      }
     ],
-    image: c3aiIcon,
-    source_code_link: "https://github.com/",
+    image: restGraph,
+    source_code_link: "https://github.com/dhruvv301292/restApi",
+    fit: 'contain'
   },
 ];
 
