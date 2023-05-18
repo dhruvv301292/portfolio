@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import TrackVisibility from 'react-on-screen';
-import dev from '../assets/img/dev.png'
+import dev from '../assets/img/dhruv-circle1.png'
 import resumeDoc from '../assets/docs/Resume.pdf';
 import { Link } from "react-router-dom";
 
