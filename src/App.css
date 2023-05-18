@@ -240,7 +240,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner {
   margin-top: -90px;
   padding: 260px 0 100px 0;
-  /* background-image: url('./assets/img/dhruvbg.png'); */
+  /* background-image: url('./assets/img/banner-bg.png'); */
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -290,16 +290,17 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .banner img {
   animation: updown 3s linear infinite;
+  filter: drop-shadow(5px 13px 15px rgba(0, 0, 0, 0.45));
 }
 @keyframes updown {
     0% {
-        transform: translateY(-20px);
+        transform: rotate(-10deg);
     }
     50% {
-        transform: translateY(20px);
+        transform: rotate(10deg);
     }
     100% {
-        transform: translateY(-20px);
+        transform: rotate(-10deg);
     }
 }
 .txt-rotate > .wrap {
