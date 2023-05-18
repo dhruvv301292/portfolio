@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import logo from '../assets/img/nameLogo.png'
+import logoImg from '../assets/img/dhruvLogo.png'
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
@@ -13,6 +14,7 @@ import Projects from './Projects';
 export default function NavBar() {
     const [activeLink, setActiveLink] = useState('home');
     const [scrolled, setScrolled] = useState(false);
+    const logoImgRef = useRef();
 
     useEffect(() => {
         const onScroll = () => {
@@ -28,7 +30,13 @@ export default function NavBar() {
     }, [])
 
     const onUpdateActiveLink = (linkName) => {
+        if (linkName === 'home') {
+            logoImgRef.current.style.display = 'none'
+        } else {
+            logoImgRef.current.style.display = 'inline'
+        }
         setActiveLink(linkName);
+
     }
 
     return (
@@ -36,7 +44,8 @@ export default function NavBar() {
             <Navbar expand="lg" className={scrolled ? "scrolled": ""}>
             <Container>
                 <Navbar.Brand as={Link} to="/">
-                    <img src={logo} className='logoName' alt='nameLogo'/>
+                    <img src={logoImg} ref={logoImgRef} className='logoImg' alt='nameLogo'/>
+                    <img src={logo} id='logoImg' className='logoName' alt='nameLogo'/>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav">
                     <span className='navbar-toggler-icon'></span>
