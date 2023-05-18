@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 import Tech from './Tech';
 import { Row, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithubAlt } from "@fortawesome/free-brands-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
 
@@ -36,9 +36,9 @@ const ProjectCard = ({
             {tags.map((tag) => (
                 <p style={{display: "inline", margin: '0'}} className={tag.color} key={`${name}-${tag.name}`}>#{tag.name} </p>
             ))}            
-            <a href={source_code_link} target="_blank"><FontAwesomeIcon icon={faGithub} size="2xl" style={{color: "#1a1c1e", float: 'right'}} /></a>
-            {youtube_link != null ? <a href={youtube_link} target="_blank"><FontAwesomeIcon icon={faYoutube} size="2xl" style={{color: "#1a1c1e", float: 'right', marginRight: '10'}} /></a> : null}
-            {publication_link!= null ? <a href={publication_link} target="_blank"><FontAwesomeIcon icon={faBook} size="2xl" style={{color: "#1a1c1e", float: 'right', marginRight: '10'}} /></a> : null}
+            <a href={source_code_link} target="_blank"><FontAwesomeIcon icon={faGithubAlt} title="Code Repo" size="2xl" style={{color: "#1a1c1e", float: 'right'}} /></a>
+            {youtube_link != null ? <a href={youtube_link} target="_blank"><FontAwesomeIcon icon={faYoutube} title="Video Presentation" size="2xl" style={{color: "#1a1c1e", float: 'right', marginRight: '10'}} /></a> : null}
+            {publication_link!= null ? <a href={publication_link} target="_blank"><FontAwesomeIcon icon={faBook} title="Publication" size="2xl" style={{color: "#1a1c1e", float: 'right', marginRight: '10'}} /></a> : null}
             </Card.Footer>
         </Card>        
       </Tilt>
