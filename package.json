@@ -18,6 +18,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/three": "^0.152.0",
     "bootstrap": "^5.2.3",
+    "create-app-react": "^1.0.6",
     "framer-motion": "^10.12.8",
     "leaflet": "^1.9.3",
     "loaders.css": "^0.1.2",
