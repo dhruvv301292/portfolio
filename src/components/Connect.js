@@ -54,7 +54,7 @@ const Connect = () => {
   return (
     <>
       <section className="banner">
-            <Container className=''>
+            <Container className='divAnimLeftFadeIn'>
               <Row>
                 <Col xs={12} md={6} xl={7}>    
                 <h1>{`🤙 Let's Connect`}</h1>                

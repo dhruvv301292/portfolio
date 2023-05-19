@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubAlt } from "@fortawesome/free-brands-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
+import TrackVisibility from 'react-on-screen';
 
 const ProjectCard = ({
   index,
@@ -22,9 +23,9 @@ const ProjectCard = ({
   youtube_link,
   publication_link
 }) => {
-  return (    
+  return (
       <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
-        <Card style={{ width: '90%', height: '50vh', margin: '2% 2% 3% 2%' }}>
+        <Card className="cardAnimFadeUp" style={{ width: '90%', height: '50vh', margin: '2% 2% 3% 2%'}}>
             <Card.Img variant="top" style={{objectFit: fit, overflow: 'hidden'}} onClick={() => window.open(source_code_link, "_blank")} src={image} />
             <Card.Body>
                 <Card.Title style={{color: 'black'}}>{name}</Card.Title>
@@ -50,7 +51,7 @@ const Projects = () => {
     <section className="page-container">
         <Container>
         <Tech/>
-        <Row>
+        <Row className="divAnimLeftFadeInProjects">
             <h1>Projects</h1>
             <p>
                 Following projects showcases my skills and experience through
@@ -63,7 +64,7 @@ const Projects = () => {
 
       <Row className='flex flex-wrap gap-7'>
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <ProjectCard cl key={`project-${index}`} index={index} {...project} />          
         ))}
       </Row>
       </Container>

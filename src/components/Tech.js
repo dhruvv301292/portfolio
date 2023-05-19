@@ -7,7 +7,7 @@ const Tech = () => {
   return (
     <>
       <Row>
-        <h2>Skills & Frameworks</h2>
+        <h2 className="divAnimLeftFadeIn">Skills & Frameworks</h2>
       </Row>
       <Row>
         {technologies.map((technology) => (

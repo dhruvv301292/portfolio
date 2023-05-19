@@ -56,7 +56,7 @@ export default function Banner() {
                 <Col xs={12} md={6} xl={7}>
                     <TrackVisibility>
                     {({ isVisible }) =>
-                    <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>                    
+                    <div className={isVisible ? "divAnimLeftFadeIn" : ""}>                    
                         <h1>{`🙏 Namaste! I'm Dhruv,`}</h1>
                         <h1><span className="txt-rotate"><span className="wrap">{text}</span></span></h1>
                         <p>I am currently working as a Software Engineer at C3 AI. In this role, I lead a team of 8 developers working directly with customers to design and build end-to-end Enterprise AI applications. I have experience in working with large codebases and full-stack Javascript frameworks. I am also a Deep Learning enthusiast and well-versed with deploying complex models using Python and PyTorch.</p>

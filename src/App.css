@@ -121,7 +121,7 @@ span.navbar-text {
 }
 .social-icon {
     display: inline-block;
-    margin-left: 14px;
+    margin-left: 14px;    
 }
 .social-icon a {
     width: 42px;
@@ -151,7 +151,7 @@ span.navbar-text {
 .social-icon a img {
 	width: 40%;
 	z-index: 1;
-	transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;  
 }
 .social-icon a:hover img {
 	filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
@@ -166,6 +166,7 @@ span.navbar-text {
 	position: relative;
 	background-color: transparent;
 	transition: 0.3s ease-in-out;
+  animation: connectAnim 1s ease 0s 1 normal forwards;
 }
 .navbar-text button span {
   z-index: 1;
@@ -945,8 +946,58 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-width: 2px;
   object-fit: contain;
   display: none;
+  animation: animLeftFadeIn 1s ease 0s 1 normal forwards;
 }
 
 .logoName {
   width: 250px;
+  animation: animLeftFadeIn 1s ease 0s 1 normal forwards;
+}
+
+.divAnimLeftFadeIn {
+  animation: animLeftFadeIn 1.25s ease 0s 1 normal forwards;
+}
+
+.cardAnimFadeUp {
+  animation: animLeftFadeUp 3s ease 0s 1 normal forwards;
+}
+
+.divAnimLeftFadeInProjects {
+  animation: animLeftFadeIn 3s ease 0s 1 normal forwards;
+}
+
+@keyframes animLeftFadeUp {
+	0% {
+		opacity: 0;
+		transform: translateY(500px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes animLeftFadeIn {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes connectAnim {
+	0% {
+		opacity: 0;
+		transform: translateX(+250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }

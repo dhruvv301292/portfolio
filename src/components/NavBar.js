@@ -62,7 +62,7 @@ export default function NavBar() {
                     <a href="https://github.com/dhruvv301292"><img src={navIcon2} alt="GitHub" /></a>
                 </div>
                 <Link to='/connect'>
-                    <button className="vvd" onClick={() => onUpdateActiveLink('')}><span>Let’s Connect</span></button>
+                    <button onClick={() => onUpdateActiveLink('')}><span>Let’s Connect</span></button>
                 </Link>
                 </span>
                 </Navbar.Collapse>
