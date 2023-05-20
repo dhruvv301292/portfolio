@@ -10,6 +10,7 @@ import Experience from './Experience';
 import Tech from './Tech';
 import Connect from './Connect';
 import Projects from './Projects';
+import TicTacToe from './TicTacToe';
 
 export default function NavBar() {
     const [activeLink, setActiveLink] = useState('home');
@@ -74,9 +75,7 @@ export default function NavBar() {
                 <Route exact path='/tech' element={<Tech />} />
                 <Route exact path='/projects' element={<Projects />} />
                 <Route exact path='/connect' element={<Connect />} />
-                <Route render={function () {
-                    return <p>Not found</p>
-                }} />
+                <Route path='*' element={<TicTacToe/>} />
             </Routes>
         </Router>
       );
