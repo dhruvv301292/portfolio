@@ -937,7 +937,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-right: 0.08em solid #666;
 }
 
-.logoImg {
+.logoImgFirstLoad {
   max-height: 80px;
   max-width: 80px;
   border-style: solid;
@@ -945,13 +945,44 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 10px;
   border-width: 2px;
   object-fit: contain;
-  display: none;
+  transform: translateX(-500px);
+}
+
+.logoImgFadeIn {
+  max-height: 80px;
+  max-width: 80px;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-radius: 10px;
+  border-width: 2px;
+  object-fit: contain;
   animation: animLeftFadeIn 1s ease 0s 1 normal forwards;
 }
 
-.logoName {
+.logoImgFadeOut {
+  max-height: 80px;
+  max-width: 80px;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-radius: 10px;
+  border-width: 2px;
+  object-fit: contain;
+  animation: animLeftFadeOut 1s ease 0s 1 normal forwards;
+}
+
+.logoTextFirstLoad {
   width: 250px;
-  animation: animLeftFadeIn 1s ease 0s 1 normal forwards;
+  animation: animLeftFadeInTextLogoFirstLoad 1s ease 0s 1 normal forwards;
+}
+
+.logoTextMoveLeft {
+  width: 250px;
+  animation: animMoveLeftTextLogo 1s ease 0s 1 normal forwards;
+}
+
+.logoTextMoveRight {
+  width: 250px;
+  animation: animMoveRightTextLogo 1s ease 0s 1 normal forwards;
 }
 
 .divAnimLeftFadeIn {
@@ -964,6 +995,38 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .divAnimLeftFadeInProjects {
   animation: animLeftFadeIn 3s ease 0s 1 normal forwards;
+}
+
+@keyframes animLeftFadeInTextLogoFirstLoad {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(-100px);
+	}
+}
+
+@keyframes animMoveRightTextLogo {
+	0% {
+		transform: translateX(-100px);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes animMoveLeftTextLogo {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(-100px);
+	}
 }
 
 @keyframes animLeftFadeUp {
@@ -987,6 +1050,18 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	100% {
 		opacity: 1;
 		transform: translateX(0);
+	}
+}
+
+@keyframes animLeftFadeOut {
+	0% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateX(-500px);
 	}
 }
 
@@ -1155,10 +1230,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 @keyframes animbox11 {
 	0% {
+    transform: scale(0.3);
 		opacity: 0;
 	}
 
 	100% {
+    transform: scale(1);
 		opacity: 1;
 	}
 }
@@ -1166,10 +1243,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .box:hover {
   background-color: white;
   color: #121212;
-}
-
-.clearBoard {
-  margin: 20px 0px
 }
 
 .board {
@@ -1192,9 +1265,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .tictactoeContainer {
   margin-top: -90px;
   padding: 260px 0 100px 0;
-  background-position: top center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .tictactoeContainer h1 {
@@ -1211,4 +1281,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.8px;
   line-height: 1.5em;
   width: 96%;
+}
+
+.winner {
+  font-size: 30vh;
+  position: absolute;
+  z-index: 10;
+  top: 50vh;
+  left: 26vw;
+  color: greenyellow;
+  transform: rotate(-10deg);
+  display: none;
 }

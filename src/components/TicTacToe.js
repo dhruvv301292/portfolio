@@ -7,10 +7,11 @@ export const GameContext = createContext()
 function TicTacToe() {
   const [board, setBoard] = useState([["", "", ""], ["", "", ""], ["", "", ""]])
   const turn = useRef(true)
-  // const result = useRef("Player X's turn")
+  const showWinnerRef = useRef(false)
 
   function resetGame() {
     setBoard([["", "", ""], ["", "", ""], ["", "", ""]])
+    showWinnerRef.current.style.display = 'none'
   }    
 
   useEffect(() => {
@@ -57,28 +58,27 @@ function TicTacToe() {
     }
 
     if(checkWinner()) {      
-      console.log("WINNER")
+      showWinnerRef.current.style.display = 'block';
     }
   }, [board])
 
   return (
     <GameContext.Provider value={{boardContext: [board, setBoard], turn: turn}}>
-    <section className="tictactoeContainer">
-        <Container>
-            <Row className="divAnimLeftFadeIn">
-                <h1>That's a <h1 style={{display: 'inline', color: '#C41230'}}>404!</h1></h1>
-                <p>You've navigated to a page that doesn't exist. 
-                    While you're here, why not indulge yourself in a game of tic-tac-toe (with yourself as the opponent because you're your biggest competition)
-                </p>
-            </Row>
-            <Row style={{marginTop: "2%"}}>
-                <Board turn={turn} setBoard={setBoard} board={board}></Board>                
-            </Row>
-            <div>
-            <Button className='clearBoard' onClick={resetGame}>Clear Board</Button>
-            </div>
-        </Container>
-    </section>
+      <section className="tictactoeContainer">
+          <Container>
+              <Row className="divAnimLeftFadeIn">
+                  <h1>That's a <div style={{display: 'inline', color: '#C41230'}}>404!</div></h1>
+                  <p>You've navigated to a page that doesn't exist. 
+                      While you're here, why not indulge yourself in a game of tic-tac-toe (with yourself as the opponent because you're your biggest competition)
+                  </p>
+              </Row>
+              <Row style={{marginTop: "2%"}}>
+                  <Board turn={turn} setBoard={setBoard} board={board}></Board>                
+                  <Button style={{position: 'absolute', top: '40%', right: '23%', width: '10%', border: 'solid', borderColor: 'white', borderWidth: '1px', backgroundColor: '#121212', animation: 'connectAnim 1s ease 0s 1 normal forwards', zIndex: '20'}} onClick={resetGame}>Clear Board</Button>
+                  <span ref={showWinnerRef} className="winner">NOICE</span>
+              </Row>            
+          </Container>
+      </section>
     </GameContext.Provider>
   );
 }

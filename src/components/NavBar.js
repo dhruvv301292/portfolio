@@ -16,6 +16,7 @@ export default function NavBar() {
     const [activeLink, setActiveLink] = useState('home');
     const [scrolled, setScrolled] = useState(false);
     const logoImgRef = useRef();
+    const logoTextRef = useRef();
 
     useEffect(() => {
         const onScroll = () => {
@@ -32,9 +33,15 @@ export default function NavBar() {
 
     const onUpdateActiveLink = (linkName) => {
         if (linkName === 'home') {
-            logoImgRef.current.style.display = 'none'
+            if (activeLink !== 'home') {
+                logoImgRef.current.className = 'logoImgFadeOut'
+                logoTextRef.current.className = 'logoTextMoveLeft'
+            }            
         } else {
-            logoImgRef.current.style.display = 'inline'
+            if (activeLink === 'home') {
+                logoImgRef.current.className = 'logoImgFadeIn'
+                logoTextRef.current.className = 'logoTextMoveRight'
+            }
         }
         setActiveLink(linkName);
 
@@ -45,8 +52,8 @@ export default function NavBar() {
             <Navbar expand="lg" className={scrolled ? "scrolled": ""}>
             <Container>
                 <Navbar.Brand as={Link} to="/">
-                    <img src={logoImg} ref={logoImgRef} className='logoImg' alt='nameLogo'/>
-                    <img src={logo} id='logoImg' className='logoName' alt='nameLogo'/>
+                    <img src={logoImg} ref={logoImgRef} className='logoImgFirstLoad' alt='nameLogo'/>
+                    <img src={logo} ref={logoTextRef} className='logoTextFirstLoad' alt='imageLogo'/>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav">
                     <span className='navbar-toggler-icon'></span>
