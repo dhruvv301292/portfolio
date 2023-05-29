@@ -60,7 +60,7 @@ export default function Banner() {
                         <h1>{`🙏 Namaste! I'm Dhruv,`}</h1>
                         <h1><span className="txt-rotate"><span className="wrap">{text}</span></span></h1>
                         <p>I am currently working as a Software Engineer at C3 AI. In this role, I lead a team of 8 developers working directly with customers to design and build end-to-end Enterprise AI applications. I have experience in working with large codebases and full-stack Javascript frameworks. I am also a Deep Learning enthusiast and well-versed with deploying complex models using Python and PyTorch.</p>
-                        <a href={resumeDoc} style={{textDecoration: "None"}} download="Resume_Dhruv_Vashisht"><button className="btn btn-primary" style={{display: "inline-block", marginRight: "3%", marginTop: "0", borderRadius: "20px"}}>Resume</button></a>
+                        <a href={resumeDoc} style={{textDecoration: "None"}} download="Resume_Dhruv_Vashisht"><button className="btn btn-primary" style={{display: "inline-block", marginRight: "3%", marginTop: "-5px", borderRadius: "20px"}}>Resume</button></a>
                         <Link to='/connect'>
                           <button style={{display: "inline-block"}}>Let’s Connect <ArrowRightCircle size={25} /></button>
                         </Link>                        
@@ -68,10 +68,10 @@ export default function Banner() {
                     </TrackVisibility>                 
                 </Col>
                 <Col xs={12} md={6} xl={5}>
-                <img className="dev"
-                    src={dev}
-                    alt={'dev'}
-                />
+                  <img className="dev"
+                      src={dev}
+                      alt={'dev'}
+                  />
                 </Col>
                 </Row>                
             </Container>            

@@ -55,25 +55,25 @@ export default function NavBar() {
                     <img src={logoImg} ref={logoImgRef} className='logoImgFirstLoad' alt='nameLogo'/>
                     <img src={logo} ref={logoTextRef} className='logoTextFirstLoad' alt='imageLogo'/>
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav">
+                <Navbar.Toggle aria-controls="basic-navbar-nav" style={{position: "absolute", right: "10px"}}>
                     <span className='navbar-toggler-icon'></span>
                 </Navbar.Toggle>
-                <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="nav-margin me-auto">
-                    <Nav.Link as={Link} to="/" className={activeLink === 'home' ? 'navbar-link active' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>                    
-                    <Nav.Link as={Link} to="/experience" className={activeLink === 'experience' ? 'navbar-link active' : 'navbar-link'} onClick={() => onUpdateActiveLink('experience')}>Experience</Nav.Link>
-                    <Nav.Link as={Link} to="/projects"  className={activeLink === 'projects' ? 'navbar-link active' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
-                </Nav>
-                <span className="navbar-text">
-                <div className="social-icon">
-                    <a href="https://www.linkedin.com/in/dhruv-vashisht-615567124/"><img src={navIcon1} alt="LinkedIn" /></a>
-                    <a href="https://github.com/dhruvv301292"><img src={navIcon2} alt="GitHub" /></a>
-                </div>
-                <Link to='/connect'>
-                    <button onClick={() => onUpdateActiveLink('')}><span>Let’s Connect</span></button>
-                </Link>
-                </span>
+                <Navbar.Collapse id="basic-navbar-nav" style={{backgroundColor: "#121212"}}>
+                    <Nav className="nav-margin me-auto">
+                        <Nav.Link as={Link} to="/" className={activeLink === 'home' ? 'navbar-link active' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>                    
+                        <Nav.Link as={Link} to="/experience" className={activeLink === 'experience' ? 'navbar-link active' : 'navbar-link'} onClick={() => onUpdateActiveLink('experience')}>Experience</Nav.Link>
+                        <Nav.Link as={Link} to="/projects"  className={activeLink === 'projects' ? 'navbar-link active' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
+                    </Nav>                    
                 </Navbar.Collapse>
+                <span className="navbar-text">
+                    <div className="social-icon">
+                        <a href="https://www.linkedin.com/in/dhruv-vashisht-615567124/"><img src={navIcon1} alt="LinkedIn" /></a>
+                        <a href="https://github.com/dhruvv301292"><img src={navIcon2} alt="GitHub" /></a>
+                    </div>
+                    <Link className='navbar-connect' to='/connect'>
+                        <button onClick={() => onUpdateActiveLink('')}><span>Let’s Connect</span></button>
+                    </Link>
+                </span>
             </Container>
             </Navbar>
             <Routes>
