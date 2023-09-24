@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import TrackVisibility from 'react-on-screen';
@@ -15,6 +15,7 @@ export default function Banner() {
   const [index, setIndex] = useState(1);
   const toRotate = [ "AI Engineer", "Full-Stack Developer", "Logo Designer" ];
   const period = 1000;
+  let devRef = useRef()
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -68,7 +69,7 @@ export default function Banner() {
                     </TrackVisibility>                 
                 </Col>
                 <Col xs={12} md={6} xl={5}>
-                  <img className="dev"
+                  <img ref={devRef} onAnimationEnd={() => {devRef.current.className = 'dev'}} className="dev-load"
                       src={dev}
                       alt={'dev'}
                   />
